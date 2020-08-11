@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* { box-sizing: border-box; }
+
+:root {
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+    font-family: 'Raleway', sans-serif;
+}
+
+html { 
+    height: 100%; 
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var(--very-dark-blue);
+    background-image: url('images/bg-desktop.png');
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    background-position: bottom;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    width: 80%;
+    min-height: 30%;
+    justify-content: space-between;
+}
+
+.block {
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+}
+
+/* ----------- LEFT CONTAINER ------- */
+.docs {
+    width: 40%;
+    border-top-right-radius: 30%;
+}
+
+.docs .docs-contents {
+    display: flex;
+    margin: 5em;
+    flex-direction: column;
+}
+
+.docs .docs-contents > img {
+    align-self: flex-start;
+    margin-bottom: 1.5em;
+}
+
+/* ----------- ICON IMAGES ------- */
+.docs .docs-contents ul {
+    height: 60%;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resize { width: 50%; }
+.resize > img { width: 100%; }
+
+.docs ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    border-radius: 10px;
+    background-color: var(--very-dark-blue);
+}
+
+/* ----------- RIGHT CONTAINER ------- */
+.data {
+    position: relative;
+    align-self: flex-end;
+    height: 80%;
+    width: 55%;
+}
+
+.data .data-contents {
+    margin: 5em; 
+}
+
+.bar-container {
+    display: flex;
+    height: 1.5em;
+    width: 90%;
+    border-radius: 10px;
+    background-color: var(--very-dark-blue)
+}
+
+.progress-bar {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+    border-radius: 10px;
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+.progress-bar .adjuster {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 2px;
+    background-color: white;
+}
+
+.data .data-limits {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* -------------- DIALOGUE BOX --------- */
+.data .storage-left {
+    position: absolute;
+    width: 150px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: white;
+    left: 65%;
+    top: -20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data .storage-left > p {
+    font-weight: 700;
+}
+
+.data .storage-left > p span { 
+    color: var(--very-dark-blue); 
+    font-size: 1.5rem;
+    margin-right: 0.2em;
+}
+
+.data .storage-left:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-top: 40px solid white;
+    top: 85%;
+    left: 73%;
+}
+
+/* ----------- TEXT -------------- */
+p {
+    font-size: 1rem;
+    color: var(--grayish-blue)
+}
+
+.bold {
+    font-weight: 700;
+    color: var(--pale-blue)
+}
+
+/* ------------- RESPONSIVE FOR SMALLER SCREENS ----------- */
+@media screen and (max-width: 800px) {
+    body {
+        background-image: url(images/bg-mobile.png);
+        background-size: cover;
+        align-items: center;
+        font-size: 22px;
+    }
+    
+    .container {
+        margin: 0;
+        height: 80%;
+        width: 50%;
+        flex-direction: column;
+    }
+
+    .docs {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .data {
+        width: 100%;
+        align-self: flex-start;
+    }
+
+    .data .storage-left:after {
+        content: none;
+    }
+
+    .data .storage-left {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .data .data-contents,
+    .docs .docs-contents {
+        margin: 2em;
+    }
+
+    .bar-container {
+        height: 1em;
+    }
+
+    .data .storage-left > p > span {
+        font-size: 2rem;
+    }
+}
+

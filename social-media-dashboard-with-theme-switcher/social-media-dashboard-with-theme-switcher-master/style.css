@@ -100,17 +100,18 @@ body {
 /* -------header------ */
 .header {
     position: relative;
+    overflow: hidden;
 }
 
 /* TOP BACKGROUND BEHIND HEADER */
-.header::before {
+.header-before {
     background-color: var(--very-pale-blue);
     position: absolute;
     content: '';
     top: 0;
     left: -20%;
     width: 140%;
-    height: 120%;
+    height: 140%;
     z-index: -1;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -199,6 +200,11 @@ body {
 
 .overview-content-col-top { align-items: center; }
 
+/* ----------hover effect------ */
+.hover-light:hover {
+    background-color: hsl(227, 47%, 89%);
+}
+
 /* -------------------------------------------
 ---------- LAYOUT FOR LARGE SCREENS -----------------------
 ------------------------------------------ */
@@ -212,7 +218,7 @@ body {
         margin-bottom: 3em;
     }
 
-    .header::before { height: 220%; }
+    .header-before { height: 220%; }
 
     .container {
         height: 100%;
@@ -328,3 +334,13 @@ p {
         margin-right: 10px;
     }
 }
+
+/* -------------------------------------------
+---------- DARK MODE CLASSES -----------------------
+------------------------------------------ */
+.text-dark { color: var(--desaturated-blue); }
+.dark-body { background-color: var(--very-dark-blue);}
+.dark-card-bg { background-color: var(--dark-desaturated-blue); }
+.dark-header-bg { background-color: var(--very-dark-blue-bg-pattern);}
+.hover-dark:hover { background-color: hsl(228, 28%, 25%); }
+.text-white { color: white; }

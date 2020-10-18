@@ -16,37 +16,34 @@
 <body>
   <div class="container">
     <!-- ----------HEADER------ -->
-    <header class="header row justify-content-between">
-      <div class="col-md-10">
-        <span class="header-before"></span>
-        <div class="header__top">
-          <h1>
-            Social Media Dashboard
-          </h1>
-          <p class="header__total-followers">
-            Total Followers: 23,004
-          </p>
-        </div>
+    <header class="header d-md-flex justify-content-md-between">
+      <span class="header-before"></span>
+      <div class="header__top">
+        <h1>
+          Social Media Dashboard
+        </h1>
+        <p class="header__total-followers">
+          Total Followers: 23,004
+        </p>
       </div>
 
-      <div class="col-md-2">
-        <div class="header__bottom">
-          <p class="dark-mode-text">
-            Dark Mode
-          </p>
-          <label for="mode" class="toggle-mode">
-            <input type="checkbox" id="mode" class="toggle__input">
-            <span class="toggle-btn"></span>
-          </label>
-        </div>
+      <div class="header__bottom d-flex justify-content-between no-gutters">
+        <p class="dark-mode-text">
+          Dark Mode
+        </p>
+        <label for="mode" class="toggle-mode">
+          <input type="checkbox" id="mode" class="toggle__input">
+          <span class="toggle-btn mt-md-2"></span>
+        </label>
       </div>
     </header>
 
 
     <!-- -----FOLLOWERS CONTAINER------ -->
-    <div class="followers-container">
+    <div class="followers-container row justify-content-around no-gutter">
       <!-- ------ FACEBOOK FOLLOWERS --------  -->
-      <div class="followers-container__followers-info followers-container__followers-facebook hover-light">
+      <div class="followers-container__followers-info followers-container__followers-facebook 
+      col-md-2 hover-light">
         <div class="followers-container__follower-handle">
           <img src="images/icon-facebook.svg" alt="facebook icon">
           <p class="followers-container__username">
@@ -70,7 +67,8 @@
       </div>
 
       <!-- ------TWITTER FOLLOWERS------  -->
-      <div class="followers-container__followers-info followers-container__followers-twitter hover-light">
+      <div class="followers-container__followers-info followers-container__followers-twitter 
+      col-md-2 hover-light">
         <div class="followers-container__follower-handle">
           <img src="images/icon-twitter.svg" alt="twitter icon">
           <p class="followers-container__username">
@@ -95,7 +93,8 @@
 
 
       <!-- ------INSTAGRAM FOLLOWERS----- -->
-      <div class="followers-container__followers-info followers-container__followers-instagram hover-light">
+      <div class="followers-container__followers-info followers-container__followers-instagram 
+      col-md-2 hover-light">
         <div class="followers-container__follower-handle">
           <img src="images/icon-instagram.svg" alt="instagram icon">
           <p class="followers-container__username">
@@ -119,7 +118,8 @@
       </div>
       
       <!-- ------YOUTUBE SUBSCRIBERS------ -->
-      <div class="followers-container__followers-info followers-container__followers-youtube hover-light">
+      <div class="followers-container__followers-info followers-container__followers-youtube 
+      col-md-2 hover-light">
         <div class="followers-container__follower-handle">
           <img src="images/icon-youtube.svg" alt="youtube icon">
           <p class="followers-container__username">

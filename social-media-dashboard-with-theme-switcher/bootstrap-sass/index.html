@@ -16,37 +16,36 @@
 <body>
   <div class="container">
     <!-- ----------HEADER------ -->
-    <header class="header row justify-content-between">
-      <div class="col-md-10">
-        <span class="header-before"></span>
-        <div class="header__top">
-          <h1>
-            Social Media Dashboard
-          </h1>
-          <p class="header__total-followers">
-            Total Followers: 23,004
-          </p>
-        </div>
+    <header class="header d-md-flex justify-content-md-between">
+      <span class="header-before"></span>
+      <div class="header__top">
+        <h1>
+          Social Media Dashboard
+        </h1>
+        <p class="header__total-followers">
+          Total Followers: 23,004
+        </p>
       </div>
 
-      <div class="col-md-2">
-        <div class="header__bottom">
-          <p class="dark-mode-text">
-            Dark Mode
-          </p>
-          <label for="mode" class="toggle-mode">
-            <input type="checkbox" id="mode" class="toggle__input">
-            <span class="toggle-btn"></span>
-          </label>
-        </div>
+      <div class="header__bottom d-flex justify-content-between 
+      align-items-center no-gutters">
+        <p class="dark-mode-text">
+          Dark Mode
+        </p>
+        <label for="mode" class="toggle-mode">
+          <input type="checkbox" id="mode" class="toggle__input">
+          <span class="toggle-btn mt-2"></span>
+        </label>
       </div>
     </header>
 
 
     <!-- -----FOLLOWERS CONTAINER------ -->
-    <div class="followers-container">
+    <div class="followers-container row justify-content-between 
+    no-gutters mt-3">
       <!-- ------ FACEBOOK FOLLOWERS --------  -->
-      <div class="followers-container__followers-info followers-container__followers-facebook hover-light">
+      <div class="followers-container__followers-info followers-container__followers-facebook 
+      col-md-2 hover-light">
         <div class="followers-container__follower-handle">
           <img src="images/icon-facebook.svg" alt="facebook icon">
           <p class="followers-container__username">
@@ -70,7 +69,8 @@
       </div>
 
       <!-- ------TWITTER FOLLOWERS------  -->
-      <div class="followers-container__followers-info followers-container__followers-twitter hover-light">
+      <div class="followers-container__followers-info followers-container__followers-twitter 
+      col-md-2 hover-light">
         <div class="followers-container__follower-handle">
           <img src="images/icon-twitter.svg" alt="twitter icon">
           <p class="followers-container__username">
@@ -95,7 +95,8 @@
 
 
       <!-- ------INSTAGRAM FOLLOWERS----- -->
-      <div class="followers-container__followers-info followers-container__followers-instagram hover-light">
+      <div class="followers-container__followers-info followers-container__followers-instagram 
+      col-md-2 hover-light">
         <div class="followers-container__follower-handle">
           <img src="images/icon-instagram.svg" alt="instagram icon">
           <p class="followers-container__username">
@@ -119,7 +120,8 @@
       </div>
       
       <!-- ------YOUTUBE SUBSCRIBERS------ -->
-      <div class="followers-container__followers-info followers-container__followers-youtube hover-light">
+      <div class="followers-container__followers-info followers-container__followers-youtube 
+      col-md-2 hover-light">
         <div class="followers-container__follower-handle">
           <img src="images/icon-youtube.svg" alt="youtube icon">
           <p class="followers-container__username">
@@ -143,16 +145,18 @@
       </div>
     </div>
     
-    <!-- -----------OVERVIEW--------- -->
-    <div class="overview-container">
+
+    <!-- -----------OVERVIEW CONTAINER --------- -->
+    <div class="overview-container mt-4">
       <h2 class="overview-container-heading">
         Overview - Today
       </h2>
-      <div class="overview-content">
+      <div class="overview-content mt-4">
         <!-- ROW 1 -->
         <div class="overview-content-row overview-content--row1">
           <!-- COL 1 FACEBOOK PAGE VIEWS -->
-          <div class ="overview-content-col hover-light">
+          <div class ="overview-content-col 
+          hover-light col-md-2">
             <!-- TOP -->
             <div class="overview-content-col-top">
               <p class="overview-content-col-text">
@@ -176,7 +180,8 @@
           </div>
 
           <!-- COL 2 FACEBOOK LIKES -->
-          <div class ="overview-content-col hover-light">
+          <div class ="overview-content-col 
+          col-md-2 hover-light">
             <!-- TOP -->
             <div class="overview-content-col-top">
               <p class="overview-content-col-text">
@@ -200,7 +205,8 @@
           </div>
 
           <!-- COL 3 INSTAGRAM LIKES -->
-          <div class ="overview-content-col hover-light">
+          <div class ="overview-content-col 
+          col-md-2 hover-light">
             <!-- TOP -->
             <div class="overview-content-col-top">
               <p class="overview-content-col-text">
@@ -224,7 +230,8 @@
           </div>
 
           <!-- COL 4 INSTAGRAM PROFILE VIEWS -->
-          <div class ="overview-content-col hover-light">
+          <div class ="overview-content-col 
+          col-md-2 hover-light">
             <!-- TOP -->
             <div class="overview-content-col-top">
               <p class="overview-content-col-text">
@@ -252,7 +259,8 @@
         <!-- ------ROW 2---- -->
         <div class="overview-content-row overview-content--row2">
           <!-- COL 1 TWITTER RETWEETS -->
-          <div class ="overview-content-col hover-light">
+          <div class ="overview-content-col 
+          col-md-2 hover-light">
             <!-- TOP -->
             <div class="overview-content-col-top">
               <p class="overview-content-col-text">
@@ -276,7 +284,8 @@
           </div>
 
           <!-- COL 2 TWITTER LIKES -->
-          <div class ="overview-content-col hover-light">
+          <div class ="overview-content-col 
+          col-md-2 hover-light">
             <!-- TOP -->
             <div class="overview-content-col-top">
               <p class="overview-content-col-text">
@@ -300,7 +309,8 @@
           </div>
 
           <!-- COL 3 YOUTUBE LIKES -->
-          <div class ="overview-content-col hover-light">
+          <div class ="overview-content-col 
+          col-md-2 hover-light">
             <!-- TOP -->
             <div class="overview-content-col-top">
               <p class="overview-content-col-text">
@@ -324,7 +334,8 @@
           </div>
           
           <!-- COL 4 YOUTUBE VIEWS -->
-          <div class ="overview-content-col hover-light">
+          <div class ="overview-content-col 
+          col-md-2 hover-light">
             <!-- TOP -->
             <div class="overview-content-col-top">
               <p class="overview-content-col-text">

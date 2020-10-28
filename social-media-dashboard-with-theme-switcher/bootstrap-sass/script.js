@@ -5,7 +5,7 @@ const darkMode = document.querySelector('.toggle__input');
 const body = document.querySelector('body');
 
 // header bg
-const headerBg = document.querySelector('.header-before');
+const headerBg = document.querySelector('.header .header-before');
 
 // text
 const p = document.querySelectorAll('p');

@@ -10,7 +10,7 @@ function style() {
     .pipe(sass().on('error', sass.logError))
     // 3. create css file
     .pipe(gulp.dest('bootstrap-sass/styles/css'))
-    // 4. stream changes to all browsers
+    // 4. stream changes to all browsers (browser sync)
     .pipe(browserSync.stream());
 }
 

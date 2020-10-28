@@ -85,6 +85,8 @@ body {
 /* -------------------------------------------
 ---------- LAYOUT -----------------------
 ------------------------------------------ */
+
+
 /* -------header------ */
 .header {
     position: relative;
@@ -104,6 +106,7 @@ body {
     }
 }
 
+// followers container and overview container cards
 .followers-container__followers-info,
 .overview-content-col { 
     background-color: $light-grayish-blue; 
@@ -113,90 +116,81 @@ body {
 
 /* ------ followers container -------- */
 .followers-container {
-    .followers-container__layout {
+    .followers-container__followers-info {
         display: flex;
         flex-direction: column;
         align-items: center;
-        // padding: 0 8em;
     }
 
-    .followers-container__followers-facebook,
-    .followers-container__followers-instagram,
-    .followers-container__followers-twitter,
-    .followers-container__followers-youtube {
-        @extend .followers-container__layout;
+    .followers-container__follower-handle {
+        display: flex;
+        align-items: center;
+
+        .followers-container__username { margin-top: 0.8em; }
+
+        & > img { margin-right: 4px; }
+    }
+
+    .followers-container__followers-count { text-align: center; }
+
+    /* adding colored border at top of followers cards */
+    .followers-container__followers-facebook { border-top: 3px solid $facebook; }
+    .followers-container__followers-twitter { border-top: 3px solid $twitter; }
+    .followers-container__followers-youtube { border-top: 3px solid $youtube; }
+    
+    .followers-container__followers-instagram { 
+        position: relative; 
+        
+        &::before {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: '';
+            background: $instagram;
+            top: -3px;
+            left: 0;
+            border-radius: 10px;
+            z-index: -1;
+        }
     }
 }
 
-
-.followers-container__follower-handle {
-    display: flex;
-    align-items: center;
-}
-
-.followers-container__follower-handle > img {
-    margin-right: 0.5em;
-}
-
-.followers-container__followers-count {
-    text-align: center;
-}
-
-/* adding colored border at top */
-.followers-container__followers-facebook {
-    border-top: 3px solid $facebook;
-}
-.followers-container__followers-twitter {
-    border-top: 3px solid $twitter;
-}
-.followers-container__followers-instagram { position: relative; }
-.followers-container__followers-instagram::before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background: $instagram;
-    top: -3px;
-    left: 0;
-    border-radius: 10px;
-    z-index: -1;
-}
-.followers-container__followers-youtube {
-    border-top: 3px solid $youtube;
-}
-
-.followers-container__change-in-follower > img,
-.overview-content-col-follower-change > img { 
-    margin-top: 2px; 
-    margin-right: 4px;
-}
-
+// Change in followers text
 .followers-container__change-in-follower,
 .overview-content-col-follower-change {
     display: flex;
     align-items: center;
-}
 
-.increase-text { color: $lime-green; }
-.decrease-text { color: $bright-red; }
+    & > img {
+        margin-right: -0.9em;
+    }
+
+    // Colors for when increase or decrease in followers
+    .increase-text { color: $lime-green; }
+    .decrease-text { color: $bright-red; }
+
+    .increase-text, .decrease-text {
+        padding: 1.2em;
+    }
+}
 
 /* ------overview content ----- */
 .overview-container {
-    margin-top: 5em;
-}
-.overview-content-col-top,
-.overview-content-col-bottom {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
+    .overview-content-col-top,
+    .overview-content-col-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5em;
+        align-items: flex-end;
+    }
+
+    .overview-content-col-bottom {
+        .overview-content-col-follower-change > p { padding-right: 0; }
+    }
 }
 
-.overview-content-col-top { align-items: center; }
-
-/* ----------hover effect------ */
-.hover-light:hover {
-    background-color: hsl(227, 47%, 89%);
-}
+/* ------- HOVER EFFECT FOR ALL CARDS --------- */
+.hover-light:hover { background-color: hsl(227, 47%, 89%); }
 
 /* -------------------------------------------
 ---------- LAYOUT FOR LARGE SCREENS -----------------------
@@ -209,54 +203,32 @@ body {
         .header-before { height: 220%; }
     }
 
-    // .followers-container, .overview-container {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     height: 25%;
-    //     width: 100%;
-    // }
-
-    /* -----followers-container---- */
-    .followers-container__follower-handle {
-        margin-bottom: 1em;
-    }
-    // .followers-container__followers-info {
-    //     padding: 1em 1.2em;
-    // }
-
     /* ------ overview-container ------ */
     .overview-container {
         flex-direction: column;
-        margin-top: 2em;
+
+        .overview-content-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .overview-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
     }
-
-    .overview-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .overview-content-col {
-        width: 20%;
-    }
-    
-    .overview-content-row {
-        display: flex;
-        justify-content: space-between;
-        height: 45%;
-    }
-
-
-
 }
+
+
 /* -------------------------------------------
 ---------- TYPOGRAPHY -----------------------
 ------------------------------------------ */
-h1, .header__total-followers { margin: 0; }
+h1, .header__total-followers, p { margin: 0; }
 
 h1 {
     padding-top: 1.25em;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: $very-dark-blue;
 }
@@ -264,6 +236,7 @@ h1 {
 .overview-container-heading {
     color: $dark-grayish-blue;
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 p {
@@ -271,7 +244,9 @@ p {
     font-weight: 400;
 }
 
-.header__total-followers, .dark-mode-text { font-weight: 700; }
+.header__total-followers, 
+.dark-mode-text { font-weight: 700; }
+
 .header__total-followers {
     margin-top: 0.25em;
     padding-bottom: 1em;
@@ -284,6 +259,8 @@ p {
     font-weight: 700;
 }
 
+.followers-container__follower-handle > p { font-weight: 700; }
+
 .followers-container__followers-count > p:last-child,
 .followers-container__followers-count > p:first-child { margin: 0; }
 
@@ -293,14 +270,18 @@ p {
     margin-top: -8px;
 }
 
-.overview-content-col-text {
+.overview-content-col-text { font-weight: 700; }
+
+.overview-content-col-follower-count {
+    font-size: 1.7rem;
+    color: $very-dark-blue;
     font-weight: 700;
 }
 
-.overview-content-col-follower-count {
-    font-size: 2rem;
-    color: $very-dark-blue;
+.increase-text,
+.decrease-text {
     font-weight: 700;
+    font-size: 0.7rem; 
 }
 
 /* -------------------------------------------
@@ -312,14 +293,33 @@ p {
         align-self: center;
         margin-right: 10px;
     }
+
+    .followers-container__followers-count--font-size { font-size: 2.5rem; }
+
+    .followers-container__followers-count > p:last-child { font-size: 0.8rem; }
+
+    .overview-content-col-follower-count { font-size: 1rem; }
+}
+
+@media screen and (min-width: 1024px) {
+    .followers-container__followers-count--font-size {
+        font-size: 3rem;
+    }
+
+    .followers-container__followers-count > p:last-child {
+        letter-spacing: 0.25em;
+        font-size: 1rem;
+        margin-top: -8px;
+    }
 }
 
 /* -------------------------------------------
 ---------- DARK MODE CLASSES -----------------------
 ------------------------------------------ */
-.text-dark { color: $desaturated-blue; }
-.dark-body { background-color: $very-dark-blue;}
+.text-dark { color: $desaturated-blue !important; }
+.dark-body { background-color: $very-dark-blue; }
 .dark-card-bg { background-color: $dark-desaturated-blue; }
-.dark-header-bg { background-color: $very-dark-blue-bg-pattern; }
+.dark-header-bg { background-color: $very-dark-blue-bg-pattern !important; }
 .hover-dark:hover { background-color: hsl(228, 28%, 25%); }
 .text-white { color: white; }
+  
